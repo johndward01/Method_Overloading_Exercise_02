@@ -92,7 +92,7 @@ public class Coordinate
         Y = y;
         Z = z;
     }
-    double X;
-    double Y;
-    double Z;
+    public double X;
+    public double Y;
+    public double Z;
 }
