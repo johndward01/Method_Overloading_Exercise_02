@@ -18,7 +18,6 @@ internal class Methods
     }
 
 
-
     // TODO: Create 2 overloads of the Concatenate method 
     // 1 for taking in 3 strings Concatenate(string str1, string str2, string str3)
     // 1 for taking an Array of strings Concatenate(string[] strs)
@@ -50,8 +49,7 @@ internal class Methods
         return new Coordinate(x, y);
     }
 }
-
-
+   
 public class Coordinate
 {
     public Coordinate(double x, double y)
@@ -59,6 +57,6 @@ public class Coordinate
         X = x;
         Y = y;
     }
-    double X;
-    double Y;
+    public double X;
+    public double Y;
 }
