@@ -1,25 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Method_Overloading_Exercise_02;
 
-namespace Method_Overloading_Exercise_02;
 internal class Methods
 {
+
+    // TODO: Create 2 overloads of the Area method
+    // 1 for a rectangle Area(double length, double width)
+    // 1 for a circle Area(double radius)
+
     /// <summary>
     /// Calculates the Area of the square
     /// </summary>
     /// <param name="side">The length of the side of the square</param>
     /// <returns>The Area</returns>
-    public static double Area(double side)
+    public static double Area(int side)
     {
         return Math.Pow(side, 2);
     }
 
-    // TODO: Create 2 overloads of the Area method above
-    // 1 for a rectangle Area(double length, double width)
-    // 1 for a circle Area(double radius)
+    public static double Area(double length, double width)
+    {
+        return (2 * length) + (2 * width);
+    }
+
+    public static double Area(double radius) 
+    { 
+        return Math.PI * Math.Pow(radius, 2); 
+    }
+
+
+    // TODO: Create 2 overloads of the Concatenate method 
+    // 1 for taking in 3 strings Concatenate(string str1, string str2, string str3)
+    // 1 for taking an Array of strings Concatenate(string[] strs)
 
     /// <summary>
     /// Combines the strings into 1 string
@@ -32,8 +43,56 @@ internal class Methods
         return str1 + str2;
     }
 
-    // TODO: Create 2 overloads of the Concatenate method above
-    // 1 for taking in 3 strings Concatenate(string str1, string str2, string str3)
-    // 1 for taking an Array of strings Concatenate(string[] strs)
+    public static string Concatenate(string str1, string str2,  string str3)
+    {
+        return str1 + str2 + str3;
+    }
 
+    public static string Concatenate(string[] strs)
+    {
+        var concatenatedString = "";
+        for (int i = 0; i < strs.Length; i++)
+        {
+            concatenatedString += strs[i];
+        }
+        return concatenatedString;
+    }
+
+    // TODO: Create an overload of the SetCoordinate Method 
+    // for taking 3 parameters SetCoordinate(int x, int y, int z)
+    // hint: you will need to use the Coordinate class below
+
+    /// <summary>
+    /// Sets a Coordinate
+    /// </summary>
+    /// <param name="x">Represents the x-axis</param>
+    /// <param name="y">Represents the y-axis</param>
+    /// <returns>An instance of a Coordinate class with the X and Y fields set</returns>
+    public static Coordinate SetCoordinate(int x, int y)
+    {
+        return new Coordinate(x, y);
+    }
+
+    public static Coordinate SetCoordinate(int x, int y, int z)
+    {
+        return new Coordinate(x, y, z);
+    }
+}
+
+public class Coordinate
+{
+    public Coordinate(double x, double y)
+    {
+        X = x;
+        Y = y;
+    }
+    public Coordinate(double x, double y, double z)
+    {
+        X = x;
+        Y = y;
+        Z = z;
+    }
+    double X;
+    double Y;
+    double Z;
 }
